@@ -40,3 +40,6 @@ smart-base/.cache/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Exportações CSV do banco legado (podem conter dados reais)
+smart-base/legado/
