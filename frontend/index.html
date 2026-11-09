@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Loja</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=6">
+</head>
+<body class="loja-page">
+    <header class="loja-topo">
+        <div class="loja-marca">
+            <span class="marca-icone"><i class="fa-solid fa-store"></i></span>
+            <div>
+                <h1>Gestão Loja</h1>
+                <p>Produtos disponíveis para compra</p>
+            </div>
+        </div>
+        <button id="btn-admin" class="btn btn-secundario" type="button">
+            <i class="fa-solid fa-lock"></i>
+            Área Administrativa
+        </button>
+    </header>
+
+        <section class="loja-hero">
+        <div class="loja-hero-texto">
+            <span class="eyebrow">Compra rápida e simples</span>
+            <h2>Equipamentos para sua rotina, com pedido direto no sistema</h2>
+            <p>Escolha os produtos, revise o carrinho e finalize a compra com cadastro automático do cliente.</p>
+            <div class="hero-selos" aria-label="Destaques da loja">
+                <span><i class="fa-solid fa-bolt"></i> Pedido instantâneo</span>
+                <span><i class="fa-solid fa-shield-halved"></i> Registro seguro</span>
+                <span><i class="fa-solid fa-boxes-stacked"></i> Estoque conectado</span>
+            </div>
+        </div>
+        <div class="loja-hero-visual" aria-hidden="true">
+            <div class="hero-produto hero-produto-principal">
+                <i class="fa-solid fa-laptop"></i>
+                <strong>Notebook Pro</strong>
+                <span>R$ 3500.00</span>
+            </div>
+            <div class="hero-produto hero-produto-menor">
+                <i class="fa-solid fa-computer-mouse"></i>
+                <strong>Mouse</strong>
+            </div>
+            <div class="hero-produto hero-produto-menor destaque">
+                <i class="fa-solid fa-display"></i>
+                <strong>Monitor</strong>
+            </div>
+            <div class="loja-hero-metricas">
+                <div><strong id="hero-total-produtos">0</strong><span>produtos</span></div>
+                <div><strong>24h</strong><span>registro de pedidos</span></div>
+            </div>
+        </div>
+    </section>
+    <section class="loja-beneficios" aria-label="Benefícios da compra">
+        <div>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Compra simples</span>
+        </div>
+        <div>
+            <i class="fa-solid fa-receipt"></i>
+            <span>Pedido registrado</span>
+        </div>
+        <div>
+            <i class="fa-solid fa-user-check"></i>
+            <span>Cadastro automático</span>
+        </div>
+        <div>
+            <i class="fa-solid fa-database"></i>
+            <span>Conectado ao estoque</span>
+        </div>
+    </section>
+    <main class="loja-container">
+        <section class="card loja-vitrine">
+            <div class="card-topo">
+                <div>
+                    <span class="eyebrow">Loja</span>
+                    <h2>Vitrine de Produtos</h2>
+                </div>
+                <span id="total-produtos" class="contador">0 produtos</span>
+            </div>
+            <div class="vitrine-toolbar">
+                <div class="campo-busca vitrine-busca">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input id="busca-produtos" type="text" placeholder="Buscar produto...">
+                </div>
+                <span class="vitrine-ajuda"><i class="fa-solid fa-circle-info"></i> Clique em Adicionar para montar seu carrinho</span>
+            </div>
+            <div id="mensagem-loja" class="mensagem oculto"></div>
+            <div id="lista-produtos" class="produtos-grid"></div>
+        </section>
+
+        <aside class="card carrinho-card">
+            <div class="card-topo">
+                <h3>Carrinho</h3>
+                <span id="total-carrinho" class="contador">R$ 0.00</span>
+            </div>
+            <div id="itens-carrinho" class="carrinho-lista"></div>
+
+            <form id="form-checkout" class="form-registro checkout-form">
+                <div class="campo">
+                    <label for="cliente-nome">Nome</label>
+                    <input id="cliente-nome" type="text" placeholder="Seu nome">
+                </div>
+                <div class="campo">
+                    <label for="cliente-email">Email</label>
+                    <input id="cliente-email" type="email" placeholder="seu@email.com">
+                </div>
+                <div class="campo">
+                    <label for="cliente-cidade">Cidade</label>
+                    <input id="cliente-cidade" type="text" placeholder="Sua cidade">
+                </div>
+                <button id="btn-finalizar" class="btn btn-primario" type="button">
+                    <i class="fa-solid fa-check"></i>
+                    Finalizar Compra
+                </button>
+            </form>
+        </aside>
+    </main>
+
+    <script src="loja.js?v=6"></script>
+</body>
+</html>
+
+
+
+
+
+

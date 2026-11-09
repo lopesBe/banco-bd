@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Loja - Administração</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="marca">
+                <span class="marca-icone"><i class="fa-solid fa-store"></i></span>
+                <div>
+                    <h1>Gestão Loja</h1>
+                    <p>Administração</p>
+                </div>
+            </div>
+            <nav id="menu-tabelas" class="menu-tabelas" aria-label="Tabelas"></nav>
+            <button id="btn-voltar-loja" class="btn btn-secundario btn-sidebar" type="button">
+                <i class="fa-solid fa-arrow-left"></i>
+                Voltar para Loja
+            </button>
+        </aside>
+
+        <main class="conteudo-principal">
+            <section class="cabecalho card">
+                <div>
+                    <span class="eyebrow">Painel administrativo</span>
+                    <h2 id="titulo-tabela">Cliente</h2>
+                </div>
+                <button id="btn-atualizar" class="btn btn-secundario" type="button">
+                    <i class="fa-solid fa-rotate"></i>
+                    Atualizar Lista
+                </button>
+            </section>
+
+            <div id="mensagem" class="mensagem oculto"></div>
+
+            <section class="grade">
+                <div class="card lista-card">
+                    <div class="card-topo">
+                        <h3>Registros</h3>
+                        <span id="total-registros" class="contador">0 itens</span>
+                    </div>
+                    <div class="barra-busca">
+                        <div class="campo-busca">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input id="campo-busca" type="text" placeholder="Pesquisar...">
+                        </div>
+                        <button id="btn-limpar-busca" class="btn btn-texto" type="button">
+                            <i class="fa-solid fa-xmark"></i>
+                            Limpar
+                        </button>
+                    </div>
+                    <div class="tabela-wrapper">
+                        <table>
+                            <thead id="cabecalho-tabela"></thead>
+                            <tbody id="corpo-tabela"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <aside class="card formulario-card">
+                    <div class="card-topo">
+                        <h3>Formulario</h3>
+                        <button id="btn-limpar" class="btn btn-texto" type="button">
+                            <i class="fa-solid fa-eraser"></i>
+                            Limpar
+                        </button>
+                    </div>
+                    <form id="form-registro" class="form-registro"></form>
+                    <div class="acoes">
+                        <button id="btn-salvar" class="btn btn-primario" type="button">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            Salvar
+                        </button>
+                        <button id="btn-editar" class="btn btn-secundario" type="button">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            Editar
+                        </button>
+                        <button id="btn-deletar" class="btn btn-perigo" type="button">
+                            <i class="fa-solid fa-trash"></i>
+                            Deletar
+                        </button>
+                    </div>
+                </aside>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js?v=4"></script>
+</body>
+</html>
+
+
+
