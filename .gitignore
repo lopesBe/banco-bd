@@ -1,0 +1,42 @@
+# Dependências Node
+node_modules/
+
+# Segredos / variáveis locais
+.env
+.env.local
+smart-base/.env
+
+# Build Java
+target/
+build/
+*.class
+*.jar
+*.war
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# Docker (volumes e dados locais)
+pgdata/
+postgres-data/
+pgadmin-data/
+docker-data/
+
+# Cache de modelos de embeddings (baixados automaticamente)
+smart-base/.cache/
+.cache/
+
+# Backups e temporários
+*.bak
+*.log
+*.tmp
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
