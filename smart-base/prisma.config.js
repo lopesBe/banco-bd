@@ -8,3 +8,4 @@ require('dotenv').config({ path: path.join(__dirname, '.env'), quiet: true });
 module.exports = {
   schema: path.join('prisma', 'schema.prisma'),
 };
+

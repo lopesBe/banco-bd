@@ -44,3 +44,4 @@ function paraVetorSql(vetor) {
 }
 
 module.exports = { MODELO, DIMENSOES, gerarEmbedding, gerarEmbeddings, paraVetorSql };
+

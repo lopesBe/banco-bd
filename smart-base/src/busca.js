@@ -52,3 +52,4 @@ async function buscarPalavraChave(consulta, limite = 5) {
 }
 
 module.exports = { buscarSemantica, buscarPorVetor, buscarPalavraChave };
+

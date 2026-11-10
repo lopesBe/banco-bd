@@ -234,3 +234,4 @@ Regras de `onDelete`: itens de pedido e custos são removidos junto com o pedido
 | Java: `Connection refused` ou `password authentication failed` | Containers parados ou `DB_URL/DB_USER/DB_PASSWORD` diferentes do `.env`. Rode a aplicação **na raiz** do projeto (é onde o `.env` é lido). |
 | Java: `Address already in use: 7000` | Outra instância da API está rodando. Encerre-a. |
 | Recomeçar do zero | `docker-compose down -v && docker-compose up -d`, depois `npx prisma migrate dev`, seed e embeddings. |
+
