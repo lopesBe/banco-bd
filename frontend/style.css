@@ -1451,3 +1451,189 @@ tbody tr:hover {
         padding: 16px 14px 24px;
     }
 }
+
+
+/* --- Tela de Login e Barra de Usuário --- */
+.login-page {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background:
+        radial-gradient(circle at 18% 20%, rgba(37, 99, 235, 0.22), transparent 28rem),
+        radial-gradient(circle at 82% 80%, rgba(16, 185, 129, 0.18), transparent 26rem),
+        linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #172554 100%);
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 480px;
+}
+
+.login-card {
+    padding: 32px;
+    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 28px 60px rgba(15, 23, 42, 0.35);
+}
+
+.login-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.login-icone {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+    border-radius: 18px;
+    color: white;
+    flex-shrink: 0;
+}
+
+.login-cabecalho h1 {
+    margin: 0;
+    font-size: 26px;
+    color: #0f172a;
+}
+
+.login-cabecalho p {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.login-form {
+    gap: 16px;
+}
+
+.login-btn {
+    width: 100%;
+    min-height: 48px;
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+.login-divisor {
+    position: relative;
+    text-align: center;
+    margin: 24px 0 16px;
+}
+
+.login-divisor::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    border-top: 1px solid var(--border);
+}
+
+.login-divisor span {
+    position: relative;
+    padding: 0 12px;
+    background: white;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.login-contas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.conta-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px;
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    cursor: pointer;
+    text-align: left;
+    transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.conta-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+    background: #eff6ff;
+    box-shadow: 0 10px 22px rgba(37, 99, 235, 0.12);
+}
+
+.conta-icone {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+}
+
+.conta-icone.cliente {
+    background: linear-gradient(135deg, #059669, #34d399);
+}
+
+.conta-icone.admin {
+    background: linear-gradient(135deg, #2563eb, #60a5fa);
+}
+
+.conta-info {
+    display: grid;
+    gap: 3px;
+}
+
+.conta-info strong {
+    font-size: 14px;
+    color: #0f172a;
+}
+
+.conta-info span {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.conta-info code {
+    margin-top: 4px;
+    padding: 4px 8px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.topo-acoes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.usuario-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1e40af;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+@media (max-width: 520px) {
+    .login-contas {
+        grid-template-columns: 1fr;
+    }
+}

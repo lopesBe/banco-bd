@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body class="loja-page">
     <header class="loja-topo">
@@ -19,10 +19,17 @@
                 <p>Produtos disponíveis para compra</p>
             </div>
         </div>
-        <button id="btn-admin" class="btn btn-secundario" type="button">
-            <i class="fa-solid fa-lock"></i>
-            Área Administrativa
-        </button>
+        <div class="topo-acoes">
+            <span id="usuario-logado-badge" class="usuario-badge oculto"></span>
+            <button id="btn-admin" class="btn btn-secundario" type="button">
+                <i class="fa-solid fa-lock"></i>
+                Área Administrativa
+            </button>
+            <button id="btn-sair" class="btn btn-texto" type="button">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Sair
+            </button>
+        </div>
     </header>
 
         <section class="loja-hero">
@@ -122,7 +129,7 @@
         </aside>
     </main>
 
-    <script src="loja.js?v=6"></script>
+    <script src="loja.js?v=7"></script>
 </body>
 </html>
 

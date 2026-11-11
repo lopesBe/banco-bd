@@ -131,6 +131,10 @@ function inicializar() {
     document.getElementById('btn-deletar').addEventListener('click', deletarRegistro);
     document.getElementById('btn-limpar').addEventListener('click', limparFormulario);
     document.getElementById('btn-voltar-loja').addEventListener('click', voltarParaLoja);
+    const btnSairAdmin = document.getElementById('btn-sair-admin');
+    if (btnSairAdmin) {
+        btnSairAdmin.addEventListener('click', sairAdmin);
+    }
     campoBusca.addEventListener('input', filtrarRegistros);
     document.getElementById('btn-limpar-busca').addEventListener('click', limparBusca);
 
@@ -142,12 +146,13 @@ function protegerAdmin() {
     if (sessionStorage.getItem('gestaoLojaAdmin') === 'true') {
         return;
     }
-    const senha = prompt('Digite a senha da área administrativa:');
-    if (senha === 'admin123') {
-        sessionStorage.setItem('gestaoLojaAdmin', 'true');
-        return;
-    }
-    window.location.href = 'index.html';
+    window.location.href = 'login.html';
+}
+
+function sairAdmin() {
+    sessionStorage.removeItem('gestaoLojaUsuario');
+    sessionStorage.removeItem('gestaoLojaAdmin');
+    window.location.href = 'login.html';
 }
 
 function voltarParaLoja() {

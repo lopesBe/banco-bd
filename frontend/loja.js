@@ -4,9 +4,17 @@ const SENHA_ADMIN = 'admin123';
 let produtos = [];
 let carrinho = [];
 let termoBuscaProdutos = '';
+let usuarioLogado = null;
 
 document.addEventListener('DOMContentLoaded', () => {
+    if (!verificarLoginLoja()) {
+        return;
+    }
     document.getElementById('btn-admin').addEventListener('click', acessarAdmin);
+    const btnSair = document.getElementById('btn-sair');
+    if (btnSair) {
+        btnSair.addEventListener('click', sairDaConta);
+    }
     document.getElementById('btn-finalizar').addEventListener('click', finalizarCompra);
     const buscaProdutos = document.getElementById('busca-produtos');
     if (buscaProdutos) {
@@ -17,6 +25,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     carregarProdutos();
 });
+
+function verificarLoginLoja() {
+    try {
+        const salvo = sessionStorage.getItem('gestaoLojaUsuario');
+        if (!salvo) {
+            window.location.href = 'login.html';
+            return false;
+        }
+        usuarioLogado = JSON.parse(salvo);
+        const badge = document.getElementById('usuario-logado-badge');
+        if (badge && usuarioLogado) {
+            const icone = usuarioLogado.papel === 'ADMIN' ? 'fa-user-shield' : 'fa-user';
+            badge.innerHTML = `<i class="fa-solid ${icone}"></i> ${usuarioLogado.nome} (${usuarioLogado.papel})`;
+            badge.classList.remove('oculto');
+        }
+        preencherDadosUsuarioCheckout();
+        return true;
+    } catch (e) {
+        window.location.href = 'login.html';
+        return false;
+    }
+}
+
+function preencherDadosUsuarioCheckout() {
+    if (!usuarioLogado) return;
+    const campoNome = document.getElementById('cliente-nome');
+    const campoEmail = document.getElementById('cliente-email');
+    const campoCidade = document.getElementById('cliente-cidade');
+    if (campoNome && !campoNome.value) campoNome.value = usuarioLogado.nome || '';
+    if (campoEmail && !campoEmail.value) campoEmail.value = usuarioLogado.email || '';
+    if (campoCidade && !campoCidade.value) campoCidade.value = usuarioLogado.cidade || '';
+}
+
+function sairDaConta() {
+    sessionStorage.removeItem('gestaoLojaUsuario');
+    sessionStorage.removeItem('gestaoLojaAdmin');
+    window.location.href = 'login.html';
+}
 
 async function carregarProdutos() {
     try {
@@ -153,6 +199,7 @@ async function finalizarCompra() {
 
         carrinho = [];
         document.getElementById('form-checkout').reset();
+        preencherDadosUsuarioCheckout();
         renderizarCarrinho();
         mostrarMensagem(`Pedido realizado com sucesso! Código #${pedido.idPedido}`, 'sucesso');
     } catch (erro) {
@@ -182,15 +229,14 @@ async function enviarCheckout(nome, email, cidade) {
 }
 
 function acessarAdmin() {
-    const senha = prompt('Digite a senha da área administrativa:');
-    if (senha === SENHA_ADMIN) {
-        sessionStorage.setItem('gestaoLojaAdmin', 'true');
+    if (sessionStorage.getItem('gestaoLojaAdmin') === 'true') {
         window.location.href = 'admin.html';
         return;
     }
-    if (senha !== null) {
-        mostrarMensagem('Senha incorreta.', 'erro');
-    }
+    mostrarMensagem('Acesso restrito ao perfil Admin. Redirecionando para o login...', 'erro');
+    setTimeout(() => {
+        window.location.href = 'login.html';
+    }, 1200);
 }
 
 async function lerResposta(resposta) {

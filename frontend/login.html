@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Loja - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=7">
+</head>
+<body class="login-page">
+    <main class="login-wrapper">
+        <section class="card login-card">
+            <div class="login-cabecalho">
+                <span class="marca-icone login-icone"><i class="fa-solid fa-store"></i></span>
+                <div>
+                    <span class="eyebrow">Acesso ao sistema</span>
+                    <h1>Gestão Loja</h1>
+                    <p>Entre com sua conta de cliente ou administrador</p>
+                </div>
+            </div>
+
+            <div id="mensagem-login" class="mensagem oculto"></div>
+
+            <form id="form-login" class="form-registro login-form">
+                <div class="campo">
+                    <label for="login-usuario">Usuário</label>
+                    <div class="campo-busca">
+                        <i class="fa-solid fa-user"></i>
+                        <input id="login-usuario" type="text" placeholder="teste ou admin" autocomplete="username" required>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="login-senha">Senha</label>
+                    <div class="campo-busca">
+                        <i class="fa-solid fa-lock"></i>
+                        <input id="login-senha" type="password" placeholder="Digite sua senha" autocomplete="current-password" required>
+                    </div>
+                </div>
+
+                <button id="btn-entrar" class="btn btn-primario login-btn" type="submit">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Entrar
+                </button>
+            </form>
+
+            <div class="login-divisor">
+                <span>Contas disponíveis (clique para preencher)</span>
+            </div>
+
+            <div class="login-contas">
+                <button type="button" class="conta-card" data-usuario="teste" data-senha="teste123">
+                    <div class="conta-icone cliente"><i class="fa-solid fa-bag-shopping"></i></div>
+                    <div class="conta-info">
+                        <strong>Usuário de Teste</strong>
+                        <span>Perfil: Cliente (Loja)</span>
+                        <code>teste / teste123</code>
+                    </div>
+                </button>
+
+                <button type="button" class="conta-card" data-usuario="admin" data-senha="admin123">
+                    <div class="conta-icone admin"><i class="fa-solid fa-user-shield"></i></div>
+                    <div class="conta-info">
+                        <strong>Administrador</strong>
+                        <span>Perfil: Admin (Painel + Loja)</span>
+                        <code>admin / admin123</code>
+                    </div>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script src="login.js?v=7"></script>
+</body>
+</html>
+
